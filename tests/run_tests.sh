@@ -92,7 +92,7 @@ for interp in $OPTION_INTERP; do
         $interp $FLAGS $t
     done
 
-    if [ $OPTION_COVERAGE]; then
+    if [ $OPTION_COVERAGE ]; then
         luacov
         mv luacov.report.out luacov.report.out.${LUA_VERSION}
     fi
