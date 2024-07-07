@@ -5,7 +5,7 @@
 package.path = package.path .. ';../?.lua'
 
 local rfsm = require("rfsm")
-require("rfsm_testing")
+local rfsm_testing = require("rfsm_testing")
 local utils = require("utils")
 
 -- load fsm

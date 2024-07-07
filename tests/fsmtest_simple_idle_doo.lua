@@ -5,10 +5,10 @@
 package.path = package.path .. ';../?.lua'
 
 local rfsm = require("rfsm")
-require("rfsm2tree")
-require("rfsm_testing")
+--local rfsm2tree = require("rfsm2tree")
+local rfsm_testing = require("rfsm_testing")
 local utils = require("utils")
-require("rfsmpp")
+local rfsmpp = require("rfsmpp")
 
 local testfsm = rfsm.load("../examples/simple_doo_idle.lua")
 
