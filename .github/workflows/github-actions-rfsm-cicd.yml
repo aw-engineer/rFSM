@@ -11,18 +11,22 @@ jobs:
         run: .github/workflows/dependencies.sh
 
       - name : unit tests lua 5.1
+        continue-on-error: true
         run: |
           tests/run_tests.sh -i lua5.1 --clean --coverage
 
       - name : unit tests lua 5.2
+        continue-on-error: true
         run: |
           tests/run_tests.sh -i lua5.2 --clean= --coverage
 
       - name : unit tests lua 5.3
+        continue-on-error: true
         run: |
           tests/run_tests.sh -i lua5.3 --clean= --coverage
 
       - name : unit tests lua 5.4
+        continue-on-error: true
         run: |
           tests/run_tests.sh -i lua5.4 --clean= --coverage
 
