@@ -1,0 +1,40 @@
+name: rFSM
+run-name: ${{ github.actor }} has invoked github action 🚀
+on: [push, workflow_dispatch]
+jobs:
+  total:
+    runs-on: 'ubuntu-22.04'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies. lua, luarocks, luacov
+        run: .github/workflows/dependencies.sh
+
+      - name : unit tests lua 5.1
+        continue-on-error: true
+        run: |
+          tests/run_tests.sh -i lua5.1 --coverage --noclean
+
+      - name : unit tests lua 5.2
+        continue-on-error: true
+        run: |
+          tests/run_tests.sh -i lua5.2 --coverage --noclean
+
+      - name : unit tests lua 5.3
+        continue-on-error: true
+        run: |
+          tests/run_tests.sh -i lua5.3 --coverage --noclean
+
+      - name : unit tests lua 5.4
+        continue-on-error: true
+        run: |
+          tests/run_tests.sh -i lua5.4 --coverage --noclean
+
+      - name: 🚀 Archive coverage reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          retention-days: 7
+          path: tests/luacov.report.out.*
+
+      - run: echo "This job's status is ${{ job.status }}."
