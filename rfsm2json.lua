@@ -13,7 +13,7 @@ local pcall = pcall
 local tostring = tostring
 local print = print -- debugging only
 
-module("rfsm2json")
+M = {}
 
 -- shortcuts
 local mapfsm = rfsm.mapfsm
@@ -33,7 +33,7 @@ local RFSM2JSON_VERSION = 2
 -- }
 --- Convert an initialized rFSM instance to the json representation
 -- @param fsm initalized rFSM instance
-function encode(fsm)
+function M.encode(fsm)
    if not fsm._initialized then
       error("rfsm2json: initialized FSM required")
       return false
@@ -50,3 +50,5 @@ function encode(fsm)
    end
    return json.encode(res)
 end
+
+return M
