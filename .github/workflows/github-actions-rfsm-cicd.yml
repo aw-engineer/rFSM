@@ -1,0 +1,32 @@
+name: rFSM
+run-name: ${{ github.actor }} has invoked github action 🚀
+on: [push, workflow_dispatch]
+jobs:
+  total:
+    runs-on: 'ubuntu-22.04'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install lua runtimes
+        run: |
+          sudo apt-get update
+          sudo apt-get install lua5.1 lua5.2 lua5.3 lua5.4
+          sudo apt-get install libgv-lua
+
+      - name : unit tests lua 5.1
+        run: |
+          tests/run_tests.sh -i lua5.1
+
+      - name : unit tests lua 5.2
+        run: |
+          tests/run_tests.sh -i lua5.2
+
+      - name : unit tests lua 5.3
+        run: |
+          tests/run_tests.sh -i lua5.3
+
+      - name : unit tests lua 5.4
+        run: |
+          tests/run_tests.sh -i lua5.4
+
+      - run: echo "This job's status is ${{ job.status }}."
