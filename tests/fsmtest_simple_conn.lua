@@ -9,7 +9,7 @@ require("rfsm2tree")
 require("rfsm")
 require("rfsm_testing")
 require("rfsmpp")
-require("utils")
+local utils = require("utils")
 
 testfsm = rfsm.load("../examples/connector_simple.lua")
 testfsm.dbg=false

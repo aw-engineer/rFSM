@@ -6,7 +6,7 @@
 -- SPDX-License-Identifier: BSD-3-Clause
 --
 
-require ('utils')
+local utils = require("utils")
 
 local table = table
 local io = io

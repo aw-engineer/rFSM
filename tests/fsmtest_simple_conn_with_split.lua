@@ -6,7 +6,7 @@ package.path = package.path .. ';../?.lua'
 
 require("rfsm")
 require("rfsm_testing")
-require("utils")
+local utils = require("utils")
 
 -- load fsm
 testfsm = rfsm.load("../examples/connector_split.lua")

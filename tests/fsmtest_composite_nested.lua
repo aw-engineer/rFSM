@@ -8,7 +8,7 @@ require("rfsm")
 require("rfsm2tree")
 require("rfsm_testing")
 require("rfsmpp")
-require("utils")
+local utils = require("utils")
 
 local function puts(...)
    return function () print(unpack(arg)) end

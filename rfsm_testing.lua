@@ -11,7 +11,7 @@
 
 require("rfsm")
 require("rfsm2uml")
-require("utils")
+local utils = require("utils")
 local ac = require("ansicolors")
 
 local tab2str = utils.tab2str
