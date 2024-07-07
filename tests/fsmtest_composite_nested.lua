@@ -4,11 +4,13 @@
 
 package.path = package.path .. ';../?.lua'
 
-require("rfsm")
-require("rfsm2tree")
-require("rfsm_testing")
-require("rfsmpp")
-require("utils")
+local rfsm = require("rfsm")
+--local rfsm2tree = require("rfsm2tree")
+local rfsm_testing = require("rfsm_testing")
+--local rfsmpp = require("rfsmpp")
+local utils = require("utils")
+
+local unpack = rawget(_G, "unpack") or table.unpack -- unpack is a global function for Lua 5.1, otherwise use table.unpack
 
 local function puts(...)
    return function () print(unpack(arg)) end
