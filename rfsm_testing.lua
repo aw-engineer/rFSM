@@ -9,7 +9,7 @@
 -- against actually executed trajectory
 --
 
-require("rfsm")
+local rfsm = require("rfsm")
 require("rfsm2uml")
 local utils = require("utils")
 local ac = require("ansicolors")

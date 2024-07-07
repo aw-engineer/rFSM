@@ -6,7 +6,7 @@ package.path = package.path .. ';../?.lua'
 
 require("rfsm2uml")
 require("rfsm2tree")
-require("rfsm")
+local rfsm = require("rfsm")
 require("rfsm_testing")
 require("rfsmpp")
 local utils = require("utils")

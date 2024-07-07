@@ -4,7 +4,7 @@
 
 package.path = package.path .. ';../?.lua'
 
-require("rfsm")
+local rfsm = require("rfsm")
 require("rfsm2tree")
 require("rfsm_testing")
 require("rfsmpp")

@@ -4,10 +4,10 @@
 
 package.path = package.path .. ';../?.lua'
 
-require("rfsm")
-require("rfsm2tree")
-require("rfsm_testing")
-require("rfsmpp")
+local rfsm = require("rfsm")
+--local rfsm2tree = require("rfsm2tree")
+local rfsm_testing = require("rfsm_testing")
+--local rfsmpp = require("rfsmpp")
 local utils = require("utils")
 
 local function puts(...)
@@ -23,7 +23,7 @@ local function safe_doo()
 end
 
 testfsm = rfsm.load("../examples/composite_nested.lua")
-testfsm.dbg = false
+testfsm.dbg = true
 
 local test = {
    id = 'composite_nested_tests',

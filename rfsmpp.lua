@@ -9,7 +9,7 @@
 
 require("ansicolors")
 require("utils")
-require("rfsm")
+local rfsm = require("rfsm")
 
 local unpack, print, type, pairs, assert = unpack, print, type, pairs, assert
 local table = table

@@ -9,7 +9,7 @@
 
 require("gv")
 require("utils")
-require("rfsm")
+local rfsm = require("rfsm")
 
 local pairs, ipairs, print, table, type, assert, gv, io, utils, rfsm
    = pairs, ipairs, print, table, type, assert, gv, io, utils, rfsm
